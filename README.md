@@ -50,11 +50,11 @@ kehr-vim
 
 ####1.2 已安装的插件有：####
 1. `taglist`
-<pre>用于显示tag的插件。          下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
+<pre>用于显示tag的插件。        下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
 2. `NERD_tree`
-<pre>用于显示目录的插件。         下载地址：http://www.vim.org/scripts/script.php?script_id=1658</pre>  
+<pre>用于显示目录的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=1658</pre>  
 3. `neocomplcache`
-<pre>用于代码补全的插件。         下载地址：http://www.vim.org/scripts/script.php?script_id=2620</pre>  
+<pre>用于代码补全的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=2620</pre>  
 4. `conque_term`
 <pre>用于在vim中显示控制台的插件。下载地址：http://www.vim.org/scripts/script.php?script_id=2771</pre>  
 5. `txt`
