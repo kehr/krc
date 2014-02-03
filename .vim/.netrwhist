@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/kehr/Development/linux/File'
+let g:netrw_dirhist_2='/home/kehr/Development/linux'
+let g:netrw_dirhist_3='/home/kehr/Desktop/3-Jekyll/_layouts'
+let g:netrw_dirhist_4='/home/kehr/Desktop/3-Jekyll/assets/css'
