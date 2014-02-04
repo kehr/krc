@@ -4,7 +4,7 @@ kehr-vim
 ##我的vim配置文件。##
 <a href="" target="_blank"><img src="./img/view.png"/></a>
 ###1. 介绍说明：###
-
+===================
 本项目是我目前使用vim的一些配置。初学时借鉴了网上的配置代码，后来对整体的配置做了整理，并添加了更多的功能。
 
 原本home目录下只有`.vimrc`一个文件，并没有`.vim`目录。所有的配置，包括插件的配置都写在`.vimrc`文件中。随着配置代码的增加，导致该文件越来而来越大。后来在网上看到一些帖子，于是就把代码给分离了。插件的配置单独放在一个配置文件里，一个插件一个配置文件，在`.vimrc`中通过`source`连接进来，像这样：`source ~/.vim/vimfiles/nerdtree.conf`。  
@@ -50,7 +50,7 @@ kehr-vim
 
 ####1.2 已安装的插件有：####
 1. `taglist`
-<pre>用于显示tag的插件。        下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
+<pre>用于显示tag的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
 2. `NERD_tree`
 <pre>用于显示目录的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=1658</pre>  
 3. `neocomplcache`
@@ -183,6 +183,7 @@ kehr-vim
 
 
 ###2. 安装使用：###
+===================
 
 1.将本项目中的 `.vimrc`文件 和 `.vim` 目录 复制到当前用户的家目录下。注意先备份你自己的 `.vimrc` 文件 和 `.vim` 目录。
 
@@ -195,7 +196,8 @@ cp  -r ~/.vim  ~/.vim.backup
 cp  -r .vim .vimrc  ~/
 ```
 ###3. 注意：###
-3.1 由于`.vim`目录 和 `.vimrc` 前面都有 `.` ，所以在你下载到本地的目录里文件是隐藏的。如果你的操作系统是ubuntu，使用nautilus文件管理器，只需在项目目录下按下Ctrl+H 就可一显示隐藏文件。
+===============
+3.1  由于`.vim`目录 和 `.vimrc` 前面都有 `.` ，所以在你下载到本地的目录里文件是隐藏的。如果你的操作系统是ubuntu，使用nautilus文件管理器，只需在项目目录下按下Ctrl+H 就可一显示隐藏文件。
 <a href="" target="_blank"><img src="./img/dir.png"/></a>
 其它操作系统，参见对应系统的设置说明。
  
