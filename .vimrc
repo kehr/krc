@@ -41,16 +41,9 @@ set encoding=utf-8
 "键盘命令
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" normal模式下，按下 ctrl+a，复制全文
-	map <C-A> ggVGY
-	map! <C-A> <Esc>ggVGY
-" virtual模式下，按下 Ctrl+c， 复制所选中内容
-	xnoremap <C-c> "+y
-" normal模式下，按下Ctrl+p ，粘贴系统剪切板内容
-	nmap <C-p> "+p
 
 " 格式化全文
-	map <F12> gg=G
+map <F12> gg=G
 
 " 去空行  
 nnoremap <C-F2> :g/^\s*$/d<CR> 
@@ -61,23 +54,41 @@ noremap <C-w> <Esc>:w!<CR>
 noremap <C-F12> <Esc>:x<CR> 
 """""""""""""""""""""""""""""""kehr""2013.11.17
 "添加c语言单行注释（存在问题）
-	" map <C-kDivide> I//A$
-	"map = I//A$
+" map <C-kDivide> I//A$
+"map = I//A$
 "取消单行注释
-	"map - ^xx$
+"map - ^xx$
 
+""""""""""""""""""""""""""""""""文本操作""""""""""""""""""""""""""""""""
+" normal or insert 模式下，按下 ctrl+a，全文选中
+nmap <C-A> ggVG
+imap <C-A> <Esc>ggVG
+" virtual模式下，按下 Ctrl+c， 复制所选中内容
+xnoremap <C-c> "+y
+" normal模式下，按下Ctrl+p ,粘贴系统剪切板内容到光标所在行的下一行
+nmap <C-p> "+p
 
 "上下移动当前行
 "Normal 模式下<C-j> <C-k>移动当前行到下1行或上1行
+nnoremap <C-k>  mz:m-2<cr>`z==
+nnoremap <C-j>  mz:m+<cr>`z==
 "Visual模式下<C-j> <C-k>移动当前选中的多行到下1行或上1行
-	nnoremap <C-k>  mz:m-2<cr>`z==
-	nnoremap <C-j>  mz:m+<cr>`z==
-	xnoremap <C-k>  :m'<-2<cr>gv=gv
-	xnoremap <C-j>  :m'>+<cr>gv=gv''
-" 复制当前行
-	nmap <C-Up> yyp:w<CR>
-" 删除当前行
-	nmap <C-d> dd
+xnoremap <C-k>  :m'<-2<cr>gv=gv
+xnoremap <C-j>  :m'>+<cr>gv=gv''
+" normal or insert mode 复制当前行
+nmap <C-Up> yyp
+imap <C-Up> <Esc>yypa
+" virtual mode 复制选中的多行
+vmap <C-Up> "+y<Esc>O<Esc>k"+p
+" normal or insert mode 删除当前行
+nmap <C-d> dd
+imap <C-d> <Esc>ddi
+" virtual mode 删除选中行
+vmap <C-d> d
+" normal mode 使用空格键在光标之前插入空格
+nmap <Space> i <Esc>l
+" normal mode 使用BackSpace键删除光标之前的字符
+nmap <Bs> hx
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 实用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -214,4 +225,5 @@ source ~/.vim/vimfiles/neocomplcache.conf
 " 自动探测文本类型插件txt.vim 下载地址：http://www.vim.org/scripts/script.php?script_id=1532
 au BufRead,BufNewFile *  setfiletype txt
 """""""""""""""""""""""""""""""""""""""""""""end"""""""""""""""""""""""""""""""""""""""""""""""""
+
 

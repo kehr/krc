@@ -11,50 +11,62 @@ kehr-vim
 ####1.1 功能特性####
 1. 移动当前行或多行  
 `Normal`模式下`Ctrl+j`移动当前行到下1行,`Ctrl+k` 移动当前行到上1行  
-`Visual`模式下`Ctrl+j`移动当前所选行到下1行,`Ctrl+k` 移动当前所选行到上1行
+`Visual`模式下`Ctrl+j`移动当前所选行到下1行,`Ctrl+k` 移动当前所选行到上1行 (有点问题，慎用 ×_× )
 
 2. 复制当前行  
-在`normal`模式下，按下`Ctrl+up`键（`up`键就是`↑`），会复制当前行到下一行，光标随之下向下移动一行，并保存
+在`normal` or `insert` 模式下，按下`Ctrl+up`键（`up`键就是`↑`），会复制当前行到下一行，光标随之下向下移动一行
 
-3. 删除当前行  
-在`normal`模式下，按下`Ctrl+d`键 ，删除光标所在行 。
+3. 复制选中的多行  
+在`virtual`模式下，选中多行后，按下`Ctrl+Up`，会将选中的多行复制到当前选中区域的上面。
 
-4. vim剪贴板共享  
-`normal`模式下，按下 `ctrl+a`，复制全文  
+4. 删除当前行  
+在`normal` or `insert` 模式下，按下`Ctrl+d`键 ，删除光标所在行 。
+
+5. 删除选中的行  
+在 `virtual` 模式下，选中多行，按下`Ctrl+d`键 或者 字母 `d`，删除所选多行 。
+
+6. 空格  
+在 `normal` 模式下，按下`空格键`在光标之前插入`空格`
+
+7. 删除  
+在 `normal` 模式下，按下 `删除键——BackSpace` 删除光标之前的字符
+
+8. vim剪贴板共享  
+`normal` or `virtual`模式下，按下 `ctrl+a`，全文选中  
 `virtual`模式下，按下 `Ctrl+c`，复制所选中内容  
-`normal`模式下，按下`Ctrl+p`，粘贴系统剪切板内容  
+`normal`模式下，按下`Ctrl+p`，粘贴系统剪切板内容到光标所在行的下一行 
 
-5. 在vim中打开终端  
-`normal`模式下，<F4>打开或关闭终端
+9. 在vim中打开终端  
+`normal`模式下，`<F4>`打开或关闭终端
 
-6. 编译运行当前文件  
-`normal`模式下，<F5>编译并运行当前编辑的文件
+10. 编译运行当前文件  
+`normal`模式下，`<F5>`编译并运行当前编辑的文件
 
-7. 开启目录树  
-`normal`模式下，<F6>打开或关闭目录树
+11. 开启目录树  
+`normal`模式下，`<F6>`打开或关闭目录树
 
-8. 开启Taglist  
-`normal`模式下，<F7>打开或关闭Taglist
+12. 开启Taglist  
+`normal`模式下，`<F7>`打开或关闭Taglist
 
-9. 自动生成文件模板和版权声明
+13. 自动生成文件模板和版权声明
 在终端中使用vim创建文件，`vim test.c`，会在新文件中自动添加标头  
 例如，c文件的标头：    
 <a href="" target="_blank"><img src="./img/show_title.png"/></a>  
 目前支持自动生成标头的文件类型有：`c`、`cpp`、`java`、`python`、`shell`。
-10. 快捷保存文件  
+14. 快捷保存文件  
 `normal`模式下，`Ctrl+w` 保存文件  
 
-11. 自动补全括号、单引号、双引号  
+15. 自动补全括号、单引号、双引号  
 
 ...
 
 ####1.2 已安装的插件有：####
 1. `taglist`
-<pre>用于显示tag的插件。          下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
+<pre>用于显示tag的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=273</pre>  
 2. `NERD_tree`
-<pre>用于显示目录的插件。         下载地址：http://www.vim.org/scripts/script.php?script_id=1658</pre>  
+<pre>用于显示目录的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=1658</pre>  
 3. `neocomplcache`
-<pre>用于代码补全的插件。         下载地址：http://www.vim.org/scripts/script.php?script_id=2620</pre>  
+<pre>用于代码补全的插件。       下载地址：http://www.vim.org/scripts/script.php?script_id=2620</pre>  
 4. `conque_term`
 <pre>用于在vim中显示控制台的插件。下载地址：http://www.vim.org/scripts/script.php?script_id=2771</pre>  
 5. `txt`
@@ -196,7 +208,7 @@ cp  -r .vim .vimrc  ~/
 ```
 ###3. 注意：###
 3.1 由于`.vim`目录 和 `.vimrc` 前面都有 `.` ，所以在你下载到本地的目录里文件是隐藏的。如果你的操作系统是ubuntu，使用nautilus文件管理器，只需在项目目录下按下Ctrl+H 就可一显示隐藏文件。
-<a href="" target="_blank"><img src="./img/dir.png"/></a>
+<a href="" target="_blank"><img src="./img/dir.png"/></a>  
 其它操作系统，参见对应系统的设置说明。
  
 3.2 终端配置，命令`ls -al` 显示当前目录下所有文件。
