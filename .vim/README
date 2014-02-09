@@ -1,0 +1,94 @@
+http://www.22ideastreet.com/debug/vim-directory-structure/
+
+
+Vim Directory Structure
+
+I searched for âvim directory structureâ many times online and have rarely found something that helps me out. Generally Iâm looking for the right place to put some random .vim file that I downloaded or which directory to put indentation or file type recognizer files.
+To compile this information, I basically looked through the directories that I had on my machine and read through (and copied portions of) the README files. I looked around at the files when things werenât clear. This was informal and my understanding less than 100% clear, so if you see errors or where I can be clearer, please leave a comment at the bottom of the post.
+This whole process is made significantly easier and potentially obviated by using a vim bundler like pathogen. This is because these tools allow you to work with cloned git repositories and they already have the structure correctly set up.
+The install directory
+
+Directories in /usr/share/vim/vim72 (/usr/share/vim/vim73 if youâre on the cutting edge, C:\Program Files\vim72 if you like pain) are the files that are installed by Vim. You generally should not modify these files or add files in here. Itâs better to put changes or new files in a separate directory that you can more easily control (maybe even with version control.)
+Anyway, here are the folders that are installed by default.
+autoload
+The autoload directory is for standard Vim autoload scripts.
+These are functions used by plugins and for general use. They will be loaded automatically when the function is invoked. See â:help autoloadâ.
+colors
+These files are used to get different colors by using the â:colorschemeâ command.
+compiler
+This directory contains Vim scripts to be used with a specific compiler. They are used with the â:compilerâ command. These scripts usually set options, for example âerrorformatâ. See â:help write-compiler-pluginâ.
+ftplugin
+The ftplugin directory is for Vim plugin scripts that are only used for a specific filetype.
+All files ending in .vim in this directory and subdirectories will be sourced by Vim when it detects the filetype that matches the name of the file or subdirectory.
+For example, these are all loaded for the âcâ filetype:
+    c.vim
+    c_extra.vim
+    c/settings.vim
+Note that the â_â in âc_extra.vimâ is required to separate the filetype name from the following arbitrary name.
+The filetype plugins are only loaded when the â:filetype pluginâ command has been used.
+The default filetype plugin files contain settings that 95% of the users will want to use. They do not contain personal preferences, like the value of âshiftwidthâ.
+If you want to do additional settings, or overrule the default filetype plugin, you can create your own plugin file. See â:help ftpluginâ in Vim.
+indent
+This directory contains files to automatically compute the indent for a type of file.
+If you want to add your own indent file for your personal use, read the docs at â:help indent-expressionâ.
+Note: If you want to make an indent file, it should be named for the filetype that you want, not the extension. For example, if you want to change your Javascript indentation, your file should be named javascript.vim, not js.vim.
+keymap
+Keymap files for Vim
+One of these files is loaded when the âkeymapâ option is set.
+The name of the file consists of these parts:
+    {language}[-{layout}][_{encoding}].vim
+The format of the keymap lines below âloadkeymapâ is explained in the Vim help files, see â:help keymap-file-formatâ.
+lang
+Language files for Vim
+More information in the on-line help:
+    :help multilang-menus
+    :help :menutrans
+    :help 'langmenu'
+    :help :language
+macros
+The macros in the maze, hanoi and urm directories can be used to test Vim for vi compatibility. The life macros can be used for performance comparisons.
+hanoi Macros that solve the tower of hanoi problem. life Macros that run Conwayâs game of life. maze Macros that solve a maze (amazing!). urm Macros that simulate a simple computer: âUniversal Register Machineâ
+The other files contain some handy utilities. They also serve as examples for how to use Vi and Vim functionality.
+dvorak                  for when you use a Dvorak keyboard
+
+justify.vim             user function for justifying text
+
+matchit.vim + matchit.txt  make % match if-fi, HTML tags, and much more
+
+less.sh + less.vim      make Vim work like less (or more)
+
+shellmenu.vim           menus for editing shell scripts in the GUI version
+
+swapmous.vim            swap left and right mouse buttons
+
+editexisting.vim        when editing a file that is already edited with
+                        another Vim instance
+This one is only for Unix. It can be found in the extra archive:
+file_select.vim         macros that make a handy file selector
+plugin
+editexisting.vim        when editing a file that is already edited with
+                        another Vim instance
+This one is only for Unix. It can be found in the extra archive:
+file_select.vim         macros that make a handy file selector
+plugin
+The plugin directory is for standard Vim plugin scripts.
+All files here ending in .vim will be sourced by Vim when it starts up. Look in the files for hints on how they can be disabled without deleting them.
+syntax
+This directory contains Vim scripts for syntax highlighting.
+tools
+Some tools that can be used with Vim:
+blink.c:        C program to make the cursor blink in an xterm.
+...
+vimspell.*:     Shell script for highlighting spelling mistakes.
+...
+tutor
+tutor contains the hands-on tutorial for new users
+The custom configuration directory
+
+Next, we have our custom configuration directory, commonly located at ~/.vim. This contains all of our personal modifications so we donât mess with the default configuration. From what I can tell, you can put any directory that matches the names in the install directory, and the files within will behave as if you had dropped them in the installation directory. Again, you can do this to override the default behavior without messing anything up so you can easily take your changes to other machines. For an example of what my ~/.vim directory looks like, check it out. Iâve generally tried to stick to the conventions that are laid out on this page.
+The .vimrc files
+
+They load in a certain order. You can see the approximate order and some guidelines by invoking:
+:h startup
+Also, if you run vim from the command-line with a verbose flag, you can see what the order of files being loaded is. Generally I would split out the graphical vim-specific configuration into a .gvimrc file, and have the rest of my configuration in a standard .vimrc file. This is so settings that only pertain to graphical vim versions donât give you a bunch of error messages. In the same way, some color schemes donât look very good in command-line vim, so this is a way to ensure that you have a good look for these versions.
+Posted by Anthony Panozzo on Sep 9th, 2011
