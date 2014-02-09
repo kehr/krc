@@ -371,7 +371,7 @@ cp  -r .vim .vimrc  ~/
 3.4 `1.3节.vim的目录结构`是使用命令 `tree -n .vim` 生成的。`tree`命令在ubuntu下使用`sudo apt-get install tree`安装,具体使用方法参见命令`tree --help`结果。  
 
 ###4.感谢 
-* 谢谢v2ex的两位V友 @wklken 和 @TankyWoo 的帮助。 
+* 谢谢v2ex的两位V友 <a style="text-decoration: none; color:grey" href="https://github.com/wklken/k-vim" target="_blank">@wklken</a> 和 <a style="text-decoration: none" href="https://github.com/tankywoo/dotfiles" target="_blank">@TankyWoo</a> 的帮助。 
 
 ###5.结束
 
