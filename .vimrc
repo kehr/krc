@@ -60,8 +60,10 @@ Bundle 'gmarik/vundle'
 "" original repos on GitHub:
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Yggdroot/indentLine'
+Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Yggdroot/indentLine'
+" Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -86,31 +88,44 @@ filetype plugin indent on     " required!
 "
 "" vim基本设置
 source ~/.vim/vimfiles/basicSetting.conf 
+
 "" 自动加载文件开头
 source ~/.vim/vimfiles/showtitle.conf
+
 "" 编译文件
 source ~/.vim/vimfiles/compilefile.conf
+
 "" 自动补全括号等
 source ~/.vim/vimfiles/autocomplete.conf
+
 "" 快捷键配置
 source ~/.vim/vimfiles/keyMapSetting.conf
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件的配置(pugin Configuration)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 显示目录插件NERDtree设置。  插件地址：http://www.vim.org/scripts/script.php?script_id=1658
 source ~/.vim/vimfiles/nerdtree.conf
+
 " 控制台插件ConqueTerm的设置。插件地址：http://www.vim.org/scripts/script.php?script_id=2771 
 source ~/.vim/vimfiles/conqueterm.conf
+
 " tag插件taglist的设置。      插件地址：http://www.vim.org/scripts/script.php?script_id=273
 source ~/.vim/vimfiles/taglist.conf
+
 " 代码补全插件nercomplcache   插件地址：http://www.vim.org/scripts/script.php?script_id=2620
 source ~/.vim/vimfiles/neocomplcache.conf
+
 " 自动探测文本类型插件txt.vim 插件地址：http://www.vim.org/scripts/script.php?script_id=1532
 au BufRead,BufNewFile *  setfiletype txt
+
 " 状态栏插件powerline
 source ~/.vim/vimfiles/powerline.conf
-" 显示缩进级别竖线插件indentline
+
+" 显示缩进级别竖线插件indentline 和 indentduides 
 source ~/.vim/vimfiles/indentline.conf
+" source ~/.vim/vimfiles/indentguides.conf
+
 " 括号高亮增强插件rainbow_parentheses
 source ~/.vim/vimfiles/rainbow_parentheses.conf
 
