@@ -63,6 +63,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Yggdroot/indentLine'
+Bundle 'Valloric/YouCompleteMe'
+
 " Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
@@ -74,6 +76,8 @@ Bundle 'taglist.vim'
 Bundle 'neocomplcache'
 Bundle 'Conque-Shell'
 Bundle 'txt.vim'
+Bundle 'gdbmgr'
+Bundle 'Syntastic'
 " Bundle 'L9'
 " Bundle 'FuzzyFinder'
 """"""""""" non-GitHub repos
@@ -104,30 +108,36 @@ source ~/.vim/vimfiles/keyMapSetting.conf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件的配置(pugin Configuration)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 显示目录插件NERDtree设置。  插件地址：http://www.vim.org/scripts/script.php?script_id=1658
+"" 显示目录插件NERDtree设置。  插件地址：http://www.vim.org/scripts/script.php?script_id=1658
 source ~/.vim/vimfiles/nerdtree.conf
 
-" 控制台插件ConqueTerm的设置。插件地址：http://www.vim.org/scripts/script.php?script_id=2771 
+"" 控制台插件ConqueTerm的设置。插件地址：http://www.vim.org/scripts/script.php?script_id=2771 
 source ~/.vim/vimfiles/conqueterm.conf
 
-" tag插件taglist的设置。      插件地址：http://www.vim.org/scripts/script.php?script_id=273
+"" tag插件taglist的设置。      插件地址：http://www.vim.org/scripts/script.php?script_id=273
 source ~/.vim/vimfiles/taglist.conf
 
-" 代码补全插件nercomplcache   插件地址：http://www.vim.org/scripts/script.php?script_id=2620
-source ~/.vim/vimfiles/neocomplcache.conf
+"" 代码补全插件nercomplcache   插件地址：http://www.vim.org/scripts/script.php?script_id=2620
+" source ~/.vim/vimfiles/neocomplcache.conf
 
-" 自动探测文本类型插件txt.vim 插件地址：http://www.vim.org/scripts/script.php?script_id=1532
-au BufRead,BufNewFile *  setfiletype txt
+"" 自动探测文本类型插件txt.vim 插件地址：http://www.vim.org/scripts/script.php?script_id=1532
+auto BufRead,BufNewFile *  setfiletype txt
 
-" 状态栏插件powerline
+"" 状态栏插件powerline
 source ~/.vim/vimfiles/powerline.conf
 
-" 显示缩进级别竖线插件indentline 和 indentduides 
+"" 显示缩进级别竖线插件indentline 和 indentduides 
 source ~/.vim/vimfiles/indentline.conf
 " source ~/.vim/vimfiles/indentguides.conf
 
-" 括号高亮增强插件rainbow_parentheses
+"" 括号高亮增强插件rainbow_parentheses
 source ~/.vim/vimfiles/rainbow_parentheses.conf
+
+"" YouCompleteMe配置，代码自动补全
+source ~/.vim/vimfiles/youcompleteme.conf
+
+"" Syntastic配置，静态语法检查
+source ~/.vim/vimfiles/syntastic.conf
 
 """""""""""""""""""""""""""""""""""""end""""""""""""""""""""""""""""""""""""""""""""""
 
