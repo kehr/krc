@@ -63,7 +63,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Yggdroot/indentLine'
-Bundle 'Valloric/YouCompleteMe'
+""Bundle 'Valloric/YouCompleteMe'
 
 " Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'tpope/vim-fugitive'
@@ -118,7 +118,7 @@ source ~/.vim/vimfiles/conqueterm.conf
 source ~/.vim/vimfiles/taglist.conf
 
 "" 代码补全插件nercomplcache   插件地址：http://www.vim.org/scripts/script.php?script_id=2620
-" source ~/.vim/vimfiles/neocomplcache.conf
+source ~/.vim/vimfiles/neocomplcache.conf
 
 "" 自动探测文本类型插件txt.vim 插件地址：http://www.vim.org/scripts/script.php?script_id=1532
 auto BufRead,BufNewFile *  setfiletype txt
@@ -134,7 +134,7 @@ source ~/.vim/vimfiles/indentline.conf
 source ~/.vim/vimfiles/rainbow_parentheses.conf
 
 "" YouCompleteMe配置，代码自动补全
-source ~/.vim/vimfiles/youcompleteme.conf
+""source ~/.vim/vimfiles/youcompleteme.conf
 
 "" Syntastic配置，静态语法检查
 source ~/.vim/vimfiles/syntastic.conf
