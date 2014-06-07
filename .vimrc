@@ -63,6 +63,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Yggdroot/indentLine'
+Bundle 'suan/vim-instant-markdown'
+Bundle "pangloss/vim-javascript"
 ""Bundle 'Valloric/YouCompleteMe'
 
 " Bundle 'nathanaelkane/vim-indent-guides'
