@@ -41,4 +41,8 @@ echo "backup your  .vimrc ..."
 cp -v ~/.vimrc ~/.vimrc.bak
 echo "install krc, update .vimrc ..."
 curl -L $KRC_LOC > ~/.vimrc 
+echo "I will start a vim window to install plugin，ingore any warning except install plugin failed."
+sleep 3
+vim -c "PluginInstall"
 echo "finished! enjoy it."
+
