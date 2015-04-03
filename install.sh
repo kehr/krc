@@ -9,6 +9,14 @@
 #########################################################################
 
 KRC_LOC="https://raw.githubusercontent.com/kehr/krc/master/vimrc"
+VUNDLE_JUMBO_OLD=$HOME"/.jumbo/share/vim/vimfiles/autoload"
+
+# jumbo provide a old version vundle when you install vim use command `jumbo install vim`,
+# in order to avoid conflict with the latest version of vundle, we need to remove the old version.
+if [ -d $VUNDLE_JUMBO_OLD ];then
+	echo "remove vundle provided by jumbo ..."
+	rm -rfv $VUNDLE_JUMBO_OLD/vundle*
+fi
 
 echo "check vim version ..."    
 vim_info=`vim --version | head -n1 `
@@ -24,9 +32,6 @@ if [ $vim_version -lt 16 ]; then
     exit -1
 fi
 echo "vim info is ok!\n"
-echo "get vundle ..."
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-echo "get vundle successed !\n"
 echo "backup your  .vimrc ..."
 cp -v ~/.vimrc ~/.vimrc.bak
 echo "install krc, update .vimrc ..."
