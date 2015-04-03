@@ -27,7 +27,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " vim-scripts repos:
 Plugin 'L9'
