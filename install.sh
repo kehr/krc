@@ -21,7 +21,7 @@ fi
 echo "check vim version ..."    
 vim_info=`vim --version | head -n1 `
 vim_version=`vim --version | head -n1 | awk -F " " '{split($5,ver,".");version=int(ver[1])+int(ver[2]);print version}'`
-if [ $vim_version -lt 16 ]; then
+if [ $vim_version -lt 10 ]; then
     echo "$vim_info is too old, please get the latest version !" 
     echo "Otherwise please follow the instractions below:"
     echo "    1. yum install vim #RedHat/CentOS"
