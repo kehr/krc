@@ -1,11 +1,10 @@
-krc
-=====
+
 
 ![img](./snip.png) 
 
 #Intruction  
 
-1. preinstalled plugin（YouCompleteMe disabled）：
+> 1. preinstalled plugins（YouCompleteMe disabled）：
 
 ```
 " let Vundle manage Vundle, required
@@ -28,7 +27,7 @@ Plugin 'taglist.vim'
 Plugin 'neocomplcache'
 ```
 
-2.自动补全新建文件头部声明  
+> 2. auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add other programming language suport.  
 
 ```  
 
@@ -61,7 +60,7 @@ example:
 
 ```
 
-Read the `vimrc` file to get other features. It‘s worthwhile to do this. :smail: 
+Read the `vimrc` file to get other features. It‘s worthwhile to do this. :smile: 
 
 #Required  
  * vim >= 7.3
