@@ -4,7 +4,7 @@
 
 #Intruction  
 
-> 1. preinstalled plugins（YouCompleteMe disabled）：
+> 1.Preinstalled plugins（YouCompleteMe disabled）：
 
 ```
 " let Vundle manage Vundle, required
@@ -27,7 +27,7 @@ Plugin 'taglist.vim'
 Plugin 'neocomplcache'
 ```
 
-> 2. auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add other programming language suport.  
+> 2.Auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add other programming language suport.  
 
 ```  
 
