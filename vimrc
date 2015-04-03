@@ -6,6 +6,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   User-definded setting                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:krc_author = "your name"
+let g:krc_email = "your email address"
+let g:krc_copyright = "your Copyright type"
+" your file description when you create a new file.
+let g:krc_description = ""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Vundle setting                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -240,56 +249,56 @@ map <A-F5> :call Debug ()<CR>
 "" 编译文件
 func! CompileFile()
 ""    exec "!echo File % is compiling ..." 
-	if &filetype == 'c'
-		exec "!gcc -std=c99 % -o  %<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-	elseif &filetype == 'java' 
-		exec "!javac %" 
-	elseif &filetype == 'python'
-		exec "!python %"
-	elseif expand("%") == 'Makefile' || expand("%") == 'makefile'
-		exec "!make"
-	endif
-	
+    if &filetype == 'c'
+        exec "!gcc -std=c99 % -o  %<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+    elseif &filetype == 'java' 
+        exec "!javac %" 
+    elseif &filetype == 'python'
+        exec "!python %"
+    elseif expand("%") == 'Makefile' || expand("%") == 'makefile'
+        exec "!make"
+    endif
+    
     "编译文件后清屏
-	if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'java' || &filetype == 'sh' || &filetype == 'python' || expand("%") == 'Makefile'||expand("%") == 'makefile'
-	endif
+    if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'java' || &filetype == 'sh' || &filetype == 'python' || expand("%") == 'Makefile'||expand("%") == 'makefile'
+    endif
 endfunc
 
 "" 编译并运行文件
 func! CompileAndRunFile()
-	if &filetype == 'c'
-		exec "!gcc -std=c99 % -o  %<"
-		exec "! ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'java' 
-		exec "!javac %" 
-		exec "!java %<"
-	elseif &filetype == 'sh'
-		:!chmod u+x %; ./%
-	elseif &filetype == 'python'
-		exec "!python %"
+    if &filetype == 'c'
+        exec "!gcc -std=c99 % -o  %<"
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'java' 
+        exec "!javac %" 
+        exec "!java %<"
+    elseif &filetype == 'sh'
+        :!chmod u+x %; ./%
+    elseif &filetype == 'python'
+        exec "!python %"
     elseif expand("%:e") == "swift"
         exec "!swift %" 
-	elseif expand("%") == 'Makefile' || expand("%") == 'makefile'
-		exec "!make"
-	endif
-	"编译或者执行文件后清屏
-	if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'java' || &filetype == 'sh' || &filetype == 'python' || expand("%") == 'Makefile'||expand("%") == 'makefile'
-	endif
+    elseif expand("%") == 'Makefile' || expand("%") == 'makefile'
+        exec "!make"
+    endif
+    "编译或者执行文件后清屏
+    if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'java' || &filetype == 'sh' || &filetype == 'python' || expand("%") == 'Makefile'||expand("%") == 'makefile'
+    endif
 endfunc
 
 ""调试程序
 func! Debug()
-	if &filetype == 'c'|| &filetype == 'cpp'
-		exec "!g++ % -g -o %<"
-		exec "!gdb ./%<"
-	else
-		exec "!echo '+++++++++++++++++++++++++++++++++++++++++';echo '+                                       +';echo '+  当前编辑的不是C或CPP文件，无法调试！ +';echo '+                                       +';echo '+++++++++++++++++++++++++++++++++++++++++'"
-	endif
+    if &filetype == 'c'|| &filetype == 'cpp'
+        exec "!g++ % -g -o %<"
+        exec "!gdb ./%<"
+    else
+        exec "!echo '+++++++++++++++++++++++++++++++++++++++++';echo '+                                       +';echo '+  当前编辑的不是C或CPP文件，无法调试！ +';echo '+                                       +';echo '+++++++++++++++++++++++++++++++++++++++++'"
+    endif
 endfun                 
 
 
@@ -353,11 +362,11 @@ func SetTitle()
         call setline(1,"\#!/bin/bash")
         call append(line("."),"\#########################################################################") 
         call append(line(".")+1, "\# @File Name:    ".expand("%")) 
-        call append(line(".")+2, "\# @Author:       kehr") 
-        call append(line(".")+3, "\# @Mail:      kehr.china@gmail.com") 
+        call append(line(".")+2, "\# @Author:       ".g:krc_author) 
+        call append(line(".")+3, "\# @Mail:         ".g:krc_email) 
         call append(line(".")+4, "\# @Created Time: ".strftime("%a, %m/%d/%Y, %X")) 
-        call append(line(".")+5, "\# @Copyright:    GPL 2.0 applies") 
-        call append(line(".")+6, "\# @Description:                     ") 
+        call append(line(".")+5, "\# @Copyright:    ".g:krc_copyright) 
+        call append(line(".")+6, "\# @Description:  ".g:krc_description) 
         call append(line(".")+7, "\#########################################################################") 
         call append(line(".")+8, "") 
     "python的文件后缀系统获取的是python
@@ -365,48 +374,45 @@ func SetTitle()
         call setline(1,"\#!/usr/bin/env python")
         call append(line("."),"\# -*- coding: utf-8 -*-")
         call append(line(".")+1,"\'''") 
-        call append(line(".")+2, "\@File:    ".expand("%")) 
-        call append(line(".")+3, "\@Author:  kehr") 
-        call append(line(".")+4, "\@Email:   kehr.china@gmail.com") 
-        call append(line(".")+5, "\@Time:    ".strftime("%a, %m/%d/%Y, %X")) 
-        call append(line(".")+6, "\@Copyright: GPL 2.0 applies") 
-        call append(line(".")+7, "\@Description: None") 
+        call append(line(".")+2, "@File Name:    ".expand("%")) 
+        call append(line(".")+3, "@Author:       ".g:krc_author) 
+        call append(line(".")+4, "@Mail:         ".g:krc_email) 
+        call append(line(".")+5, "@Created Time: ".strftime("%a, %m/%d/%Y, %X")) 
+        call append(line(".")+6, "@Copyright:    ".g:krc_copyright) 
+        call append(line(".")+7, "@Description:  ".g:krc_description) 
         call append(line(".")+8, "\'''") 
         call append(line(".")+9, "") 
     elseif expand("%") == "Makefile"
         call setline(1,"\#########################################################################") 
         call append(line("."), "\# @File Name:    ".expand("%")) 
-        call append(line(".")+1, "\# @Author:        kehr") 
-        call append(line(".")+2, "\# @Mail:      kehr.china@gmail.com") 
+        call append(line(".")+1, "\# @Author:     ".g:krc_author) 
+        call append(line(".")+2, "\# @Mail:       ".g:krc_email) 
         call append(line(".")+3, "\# @Created Time: ".strftime("%a, %m/%d/%Y, %X")) 
-        call append(line(".")+4, "\# @Copyright:    GPL 2.0 applies") 
-        call append(line(".")+5, "\#########################################################################") 
-        call append(line(".")+6, "\# Target:          ")
-        call append(line(".")+7, "\# Depend on:          ")
-        call append(line(".")+8, "\# Description:          ") 
-        call append(line(".")+9, "\#########################################################################") 
-        call append(line(".")+10, "CC=gcc")
-        call append(line(".")+11, "CFLAGS= -Wall -c")
-        call append(line(".")+12, "\.PHONY: clean")
-        call append(line(".")+13, "")
+        call append(line(".")+4, "\# @Copyright:    ".g:krc_copyright) 
+        call append(line(".")+5, "\# @Description:  ".g:krc_description) 
+        call append(line(".")+6, "\#########################################################################") 
+        call append(line(".")+7, "CC=gcc")
+        call append(line(".")+8, "CFLAGS= -Wall -c")
+        call append(line(".")+9, "\.PHONY: clean")
+        call append(line(".")+10, "")
     else 
         call setline(1, "\/*************************************************************************") 
         call append(line("."), " * @File Name:    ".expand("%")) 
-        call append(line(".")+1, " * @Author:       kehr") 
-        call append(line(".")+2, " * @Mail:         kehr.china@gmail.com") 
+        call append(line(".")+1, " * @Author:       ".g:krc_author) 
+        call append(line(".")+2, " * @Mail:         ".g:krc_email) 
         call append(line(".")+3, " * @Created Time: ".strftime("%a, %m/%d/%Y, %X")) 
-        call append(line(".")+4, " * @Copyright:    GPL 2.0 applies") 
-        call append(line(".")+5, " * @Description:                     ") 
+        call append(line(".")+4, " * @Copyright:    ".g:krc_copyright) 
+        call append(line(".")+5, " * @Description:  ".g:krc_description) 
         call append(line(".")+6, " *************************************************************************/") 
         call append(line(".")+7, "")
     endif
     if &filetype == 'cpp'
-        call append(line(".")+7, "#include<iostream>")
+        call append(line(".")+7, "#include <iostream>")
         call append(line(".")+8, "using namespace std;")
         call append(line(".")+9, "")
     endif
     if &filetype == 'c'
-        call append(line(".")+7, "#include<stdio.h>")
+        call append(line(".")+7, "#include <stdio.h>")
         call append(line(".")+8, "int main()")
         call append(line(".")+9, "{")
         call append(line(".")+10, "     ")
@@ -560,7 +566,7 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 """""""""""""""""""""""" nerdtree """"""""""""""""""""""""
 " 打开/关闭目录树
-nmap tr :NERDTreeToggle<CR>
+nmap nt :NERDTreeToggle<CR>
 imap <C-F2> <Esc>:NERDTreeToggle<CR>i
 "" Tells the NERD tree to make itself colourful and pretty
 let NERDChristmasTree=1
@@ -584,7 +590,7 @@ let NERDTreeCasadeOpenSingleChildDir=1
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
-set t_Co=256	   " Explicitly tell Vim that the terminal supports 256 colors. show colored statusline.
+set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors. show colored statusline.
 set noshowmode
 "" 启用缓存，加快运行速度
 let g:Powerline_cache_enabled = 1
@@ -685,18 +691,18 @@ nnoremap <silent> tg :TlistToggle<CR>
 
 " 获取操作系统类型
 function! GetSysType()
-	if has("win16") || has("win32") || has("win64")
-		return "windows"
-	elseif has("unix")
-		return "linux"
-	endif
+    if has("win16") || has("win32") || has("win64")
+        return "windows"
+    elseif has("unix")
+        return "linux"
+    endif
 endfunction
 
 " 指定ctags,系统需要安装ctags。ubuntu系统：sudo apt-get intsall 
 if GetSysType() == "windows"
-	let Tlist_Ctags_Cmd = 'ctags'
+    let Tlist_Ctags_Cmd = 'ctags'
 elseif GetSysType() == "linux"
-	let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+    let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 endif
 
 " 只显示当前文件的tag
@@ -720,5 +726,3 @@ let Tlist_Process_File_Always = 1
 let Tlist_Sort_Type = "name"
 " 在GVIM中显示标签菜单，默认不显示
 let Tlist_Show_Menu = 1
-
-
