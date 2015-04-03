@@ -31,7 +31,12 @@ if [ $vim_version -lt 10 ]; then
     echo "Choice your system type and use the command above to install vim(>=7.3)."
     exit -1
 fi
-echo "vim info is ok!\n"
+echo "vim version is ok!\n"
+
+echo "get vundle ..."
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "get vundle success!\n"
+
 echo "backup your  .vimrc ..."
 cp -v ~/.vimrc ~/.vimrc.bak
 echo "install krc, update .vimrc ..."
