@@ -8,6 +8,8 @@
 # @Description:  
 #########################################################################
 
+KRC_LOC="https://raw.githubusercontent.com/kehr/krc/master/vimrc"
+
 echo "check vim version ..."    
 vim_info=`vim --version | head -n1 `
 vim_version=`vim --version | head -n1 | awk -F " " '{split($5,ver,".");version=int(ver[1])+int(ver[2]);print version}'`
@@ -22,6 +24,5 @@ echo "get vundle successed !"
 echo "backup your  .vimrc ..."
 cp -v ~/.vimrc ~/.vimrc.bak
 echo "install krc, update .vimrc ..."
-cp -v ./vimrc ~/.vimrc 
-
+curl -L $KRC_LOC > ~/.vimrc 
 echo "finished !"
