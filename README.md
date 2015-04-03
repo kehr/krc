@@ -4,7 +4,7 @@
 
 #Intruction  
 
-> 1.Preinstalled plugins（YouCompleteMe disabled）：
+> 1.Preinstalled plugins（YouCompleteMe is disabled）：
 
 ```
 " let Vundle manage Vundle, required
