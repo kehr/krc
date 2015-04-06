@@ -9,9 +9,9 @@
 
 PS: If you are a jumbo user, this vimrc suits you very much! see `install.sh`.
 
-> 1.Preinstalled plugins（YouCompleteMe is disabled）：
+1.Preinstalled plugins（YouCompleteMe is disabled）：
 
-```
+```vim
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -32,9 +32,9 @@ Plugin 'taglist.vim'
 Plugin 'neocomplcache'
 ```
 
-> 2.Auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add another programming languages suport.  
+2.Auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add another programming languages suport.  
 
-```  
+```vim  
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   User-definded setting                    "
