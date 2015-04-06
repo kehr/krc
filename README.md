@@ -2,7 +2,12 @@
 
 ![img](./snip.png) 
 
+
+<center>**Simple is beautiful**</center>
+
 #Intruction  
+
+PS: If you are a jumbo user, this vimrc suits you very much! see `install.sh`.
 
 > 1.Preinstalled plugins（YouCompleteMe is disabled）：
 
@@ -27,7 +32,7 @@ Plugin 'taglist.vim'
 Plugin 'neocomplcache'
 ```
 
-> 2.Auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add other programming language suport.  
+> 2.Auto complete new file header. suport `C++/C`, `Python`, `Java`, `Shell`, you can add another programming languages suport.  
 
 ```  
 
@@ -60,7 +65,7 @@ example:
 
 ```
 
-Read the `vimrc` file to get other features. It‘s worthwhile to do this. :smile: 
+**Read the `vimrc` file to get more features. It's worthwhile to do this. :smile:**
 
 #Required  
  * vim >= 7.3
