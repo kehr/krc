@@ -8,9 +8,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   User-definded setting                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:krc_author = "your name"
-let g:krc_email = "your email address"
-let g:krc_copyright = "your Copyright type"
+let g:krc_author = ""
+let g:krc_email = ""
+let g:krc_copyright = "GPL 2.0"
 " your file description when you create a new file.
 let g:krc_description = ""
 
@@ -77,7 +77,7 @@ set showcmd                     " 输入的命令显示出来，看的清楚些
 set cmdheight=1                 " 命令行（在状态行下）的高度，设置为1  
 set novisualbell                " 不要闪烁(不明白)  
 set laststatus=1                " 启动显示状态行(1),总是显示状态行(2)  
-set foldenable                  " 允许折叠  
+" set foldenable                  " 允许折叠  
 set foldmethod=manual           " 手动折叠  
 set nocompatible                " 去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 " set cursorcolumn              " 高亮光标所在列
@@ -96,7 +96,7 @@ endif
 "colorscheme elflord
 "colorscheme ron
 "colorscheme slate
-"colorscheme solarized 
+colorscheme solarized 
 """""""""""""""""""""""" 设置编码 """"""""""""""""""""""""
 set fencs=utf-8,gb18030,gbk,gb2312
 set termencoding=utf-8
@@ -577,14 +577,15 @@ let NERDTreeMouseMode=2
 let NERDTreeShowBookmarks=1
 let NERDTreeShowFiles=1
 let NERDTreeShowHidden=0
-let NERDTreeShowLineNumbers=1
+let NERDTreeShowLineNumbers=0
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=31
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeShowBookmarks=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeDirArrows=1
+let NERDTreeShowLineNumbers=0
+let NERDTreeDirArrows=0
 let NERDTreeCasadeOpenSingleChildDir=1
+let NERDTreeMinimalUI=1
 
 """""""""""""""""""""""" vim-powerline """"""""""""""""""""""""
 set nocompatible   " Disable vi-compatibility
