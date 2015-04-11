@@ -8,8 +8,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   User-definded setting                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:krc_author = ""
-let g:krc_email = ""
+let g:krc_author = "kehr"
+let g:krc_email = "kehr.china@gmail.com"
 let g:krc_copyright = "GPL 2.0"
 " your file description when you create a new file.
 let g:krc_description = ""
@@ -42,7 +42,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'L9'
 Plugin 'txt.vim'
 Plugin 'Syntastic'
-Plugin 'taglist.vim'
+" Plugin 'taglist.vim'
 Plugin 'neocomplcache'
 
 " All of your Plugins must be added before the following line
@@ -344,9 +344,9 @@ imap <C-d> <Esc>ddi
 " virtual mode 删除选中行
 vmap <C-d> d
 " normal mode 使用空格键在光标之前插入空格
-nmap <Space> i <Esc>l
+"nmap <Space> i <Esc>l
 " normal mode 使用BackSpace键删除光标之前的字符
-nmap <Bs> hx
+"nmap <Bs> hx
 
 
 """""""""""""""""""""""" New file title """"""""""""""""""""""""
