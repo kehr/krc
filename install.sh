@@ -10,6 +10,7 @@
 
 KRC_LOC="https://raw.githubusercontent.com/kehr/krc/master/vimrc"
 VUNDLE_JUMBO_OLD=$HOME"/.jumbo/share/vim/vimfiles/autoload"
+is_git_installed=`which git`
 
 # jumbo provide a old version vundle when you install vim use command `jumbo install vim`,
 # in order to avoid conflict with the latest version of vundle, we need to remove the old version.
@@ -32,6 +33,13 @@ if [ $vim_version -lt 10 ]; then
     exit -1
 fi
 echo "vim version is ok!\n"
+
+
+if [ $is_git_installed'k' == 'k' ]; then
+    echo "You have no git client installed, please install git client first !"
+    exit -1
+fi
+echo "git is ok! "
 
 echo "get vundle ..."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
