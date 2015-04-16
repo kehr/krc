@@ -586,6 +586,7 @@ let NERDTreeShowLineNumbers=0
 let NERDTreeDirArrows=0
 let NERDTreeCasadeOpenSingleChildDir=1
 let NERDTreeMinimalUI=1
+let NERDTreeIgnore=['\.pyc'] " 添加不需要显示的文件名后缀，正则匹配
 
 """""""""""""""""""""""" vim-powerline """"""""""""""""""""""""
 set nocompatible   " Disable vi-compatibility
