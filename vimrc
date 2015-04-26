@@ -649,9 +649,9 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 """""""""""""""""""""""" YouCompleteMe """"""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py '
@@ -747,8 +747,13 @@ let Tlist_Show_Menu = 1
 " 设置只有保存的时候检查js文件
 let JSHintUpdateWriteOnly=1 
 " 取消错误高亮
-"let g:JSHintHighlightErrorLine = 0
+let g:JSHintHighlightErrorLine = 0
 " 绑定快捷键
-map <leader>jl :JsonLint()
+map <leader>jh :JsHintToggle<CR>
 """""""""""""""""""""""" jsbeautify """"""""""""""""""""""""
-map <leader>jb :call Jsbeautify()<CR> 
+map <leader>jb :call JsBeautify()<CR> 
+" 设置krc语法高亮
+if expand("%:t") == ".krc"
+    set syntax=vim
+endif
+
