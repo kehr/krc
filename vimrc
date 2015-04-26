@@ -36,6 +36,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'Valloric/YouCompleteMe'
 
 " vim-scripts repos:
@@ -303,7 +305,8 @@ func! Debug()
 endfun                 
 
 
-"""""""""""""""""""""""" Key Map """"""""""""""""""""""""
+"""""""""""""""""""""""" KeyMap """"""""""""""""""""""""
+let mapleader = ","
 " 去空行  
 nnoremap <C-F6> :g/^\s*$/d<CR> 
 "制表符（tab） 转换空格
@@ -316,7 +319,11 @@ nmap <F3> :%ret!<CR>:w!<CR>
 "map = I//A$
 "取消单释
 "map - ^xx$
-
+"" 自动重新加载vimrc,当vimrc被修改后。
+augroup reload_vimrc " {
+        autocmd!
+            autocmd BufWritePost $MYVIMRC source $MYVIMRC
+        augroup END " }
 """""""""""""""""""""""" 文本操作 """"""""""""""""""""""""
 " normal or insert 模式下，按下 ctrl+a，全文选中
 nmap <C-A> ggVG
@@ -357,7 +364,15 @@ autocmd BufNewFile Makefile,*.py,*.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()
 " 新建文件后，自动定位到文件末尾
 autocmd BufNewFile * normal G
 " 定义函数SetTitle，自动插入文件头 
-func SetTitle() 
+function! SetTitle() 
+ * @File Name:    /Users/wangkaixuan/.vimrc
+ * @Author:       kehr
+ * @Mail:         kehr.china@gmail.com
+ * @Created Time: 日, 04/26/2015, 21时25分18秒
+ * @Copyright:    GPL 2.0
+ * @Description:  
+ *************************************************************************/
+
     "如果文件类型为.sh文件 
     if &filetype == 'sh' 
         call setline(1,"\#!/bin/bash")
@@ -428,7 +443,7 @@ func SetTitle()
     endif
     "新建文件后，自动定位到文件末尾
     "exec ":normal G"
-endfunc 
+endfunction 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Plugin Setting                      "
@@ -567,7 +582,7 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 """""""""""""""""""""""" nerdtree """"""""""""""""""""""""
 " 打开/关闭目录树
-nmap nt :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeToggle<CR>
 imap <C-F2> <Esc>:NERDTreeToggle<CR>i
 "" Tells the NERD tree to make itself colourful and pretty
 let NERDChristmasTree=1
@@ -728,3 +743,12 @@ let Tlist_Process_File_Always = 1
 let Tlist_Sort_Type = "name"
 " 在GVIM中显示标签菜单，默认不显示
 let Tlist_Show_Menu = 1
+"""""""""""""""""""""""" jslint """"""""""""""""""""""""
+" 设置只有保存的时候检查js文件
+let JSHintUpdateWriteOnly=1 
+" 取消错误高亮
+"let g:JSHintHighlightErrorLine = 0
+" 绑定快捷键
+map <leader>jl :JsonLint()
+"""""""""""""""""""""""" jsbeautify """"""""""""""""""""""""
+map <leader>jb :call Jsbeautify()<CR> 
