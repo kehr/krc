@@ -365,14 +365,6 @@ autocmd BufNewFile Makefile,*.py,*.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()
 autocmd BufNewFile * normal G
 " 定义函数SetTitle，自动插入文件头 
 function! SetTitle() 
- * @File Name:    /Users/wangkaixuan/.vimrc
- * @Author:       kehr
- * @Mail:         kehr.china@gmail.com
- * @Created Time: 日, 04/26/2015, 21时25分18秒
- * @Copyright:    GPL 2.0
- * @Description:  
- *************************************************************************/
-
     "如果文件类型为.sh文件 
     if &filetype == 'sh' 
         call setline(1,"\#!/bin/bash")
