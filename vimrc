@@ -36,8 +36,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'moll/vim-node'
+"Plugin 'jslint.vim'
 "Plugin 'Valloric/YouCompleteMe'
 
 " vim-scripts repos:
@@ -284,6 +286,8 @@ func! CompileAndRunFile()
         :!chmod u+x %; ./%
     elseif &filetype == 'python'
         exec "!python %"
+    elseif &filetype == 'javascript'
+        exec "!node %"
     elseif expand("%:e") == "swift"
         exec "!swift %" 
     elseif expand("%") == 'Makefile' || expand("%") == 'makefile'
@@ -304,6 +308,11 @@ func! Debug()
     endif
 endfun                 
 
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
 
 """""""""""""""""""""""" KeyMap """"""""""""""""""""""""
 let mapleader = ","
@@ -748,4 +757,5 @@ map <leader>jb :call JsBeautify()<CR>
 if expand("%:t") == ".krc"
     set syntax=vim
 endif
-
+"""""""""""""""""""""' node js """"""""""""""""""
+let $JS_CMD='node'
