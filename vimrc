@@ -369,7 +369,7 @@ vmap <C-d> d
 """""""""""""""""""""""" New file title """"""""""""""""""""""""
 " 新建.c,.h,.sh,.java,.py文件，自动插入文件头 
 " 这里需注意，python文件拓展名为：.py，获取的文件类型为python
-autocmd BufNewFile Makefile,*.py,*.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
+autocmd BufNewFile Makefile,*.py,*.cpp,*.[ch],*.sh,*.java,*.rb,*.pl exec ":call SetTitle()"
 " 新建文件后，自动定位到文件末尾
 autocmd BufNewFile * normal G
 " 定义函数SetTitle，自动插入文件头 
@@ -399,6 +399,17 @@ function! SetTitle()
         call append(line(".")+7, "@Description:  ".g:krc_description) 
         call append(line(".")+8, "\"\"\"") 
         call append(line(".")+9, "") 
+    elseif &filetype == 'ruby'
+        call setline(1,"\#!/usr/bin/env ruby")
+        call setline(2,"\# -*- coding: utf-8 -*-")
+        call setline(3, "\# @File: ".expand("%")) 
+        call setline(4, "\# @Author: ".g:krc_author) 
+        call setline(5, "\# @Mail: ".g:krc_email) 
+        call setline(6, "\# @Created: ".strftime("%a, %m/%d/%Y, %X")) 
+        call setline(7, "\# @Copyright: ".g:krc_copyright) 
+        call setline(8, "\# @Description: ".g:krc_description) 
+        call setline(9, "") 
+        call setline(10, "") 
     elseif expand("%") == "Makefile"
         call setline(1,"\#########################################################################") 
         call append(line("."), "\# @File Name:    ".expand("%")) 
