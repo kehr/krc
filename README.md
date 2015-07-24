@@ -79,7 +79,7 @@ Run:
 curl -L https://raw.githubusercontent.com/kehr/krc/master/install.sh | sh
 ```
 
-Copy this snip ot your bashrc file or zshrc file: 
+Copy this snip to your bashrc file or zshrc file: 
 
 ```bash  
 export MYVIMRC=$HOME/.krc
