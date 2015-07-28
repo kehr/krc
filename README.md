@@ -96,5 +96,8 @@ alias vim='vim -u ~/.krc'
 So esay! :)
 
 
+> Note: 安装后在 normal 模式下输入命令`:PluginInstall` 安装所有插件
+
+
 
 finished ! 
