@@ -104,4 +104,6 @@ Install vim plugin. open your vim editor and type the command below.
 
 So esay! :)
 
-finished ! 
+# usage
+
+command `,t`  will open The nerdtree plugin。 type it again will close nerdtree.
