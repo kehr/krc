@@ -3,9 +3,8 @@
 ![img](./snip.png) 
 
 
-<center>**Simple is beautiful**</center>
 
-#Intruction  
+# Intruction  
 
 PS: If you are a jumbo user, this vimrc suits you very much! see `install.sh`.
 
@@ -67,37 +66,42 @@ example:
 
 **Read the `vimrc` file to get more features. It's worthwhile to do this. :smile:**
 
-#Required  
+# Required  
  * vim >= 7.3
  * git 
 
-#Install    
+# Install    
 
-Run:  
+**Step1:**
+  Make sure you prepared vim and git envoriment.
+
+**Step2:**
+
+Install Vundle
 
 ```bash
-curl -L https://raw.githubusercontent.com/kehr/krc/master/install.sh | sh
+ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
+**Step3:**
 
-Copy this snip to your bashrc file or zshrc file: 
+Get the vimrc file 
 
-```bash  
-export MYVIMRC=$HOME/.krc
-export VIMINIT="let &rtp='$HOME/.vim/bundle,' . &rtp
-so $MYVIMRC"
-alias updatekrc='curl -L https://raw.githubusercontent.com/kehr/krc/master/vimrc > ~/.krc'
+```bash
+  curl -L https://raw.githubusercontent.com/kehr/krc/master/vimrc > $HOME/.krc 
 ```
+**Step4:**
 
-OR 
+Set your default `vimrc` file
 
-```bash  
+```bash
 alias vim='vim -u ~/.krc'
 ```
+Install vim plugin. open your vim editor and type the command below.
+
+```bash  
+:PluginInstall
+```
+
 So esay! :)
-
-
-> Note: 安装后在 normal 模式下输入命令`:PluginInstall` 安装所有插件
-
-
 
 finished ! 
