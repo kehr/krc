@@ -47,7 +47,7 @@ Plugin 'L9'
 Plugin 'txt.vim'
 Plugin 'Syntastic'
 " Plugin 'taglist.vim'
-Plugin 'neocomplcache'
+" Plugin 'neocomplcache'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
