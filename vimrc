@@ -47,7 +47,7 @@ Plugin 'L9'
 Plugin 'txt.vim'
 Plugin 'Syntastic'
 " Plugin 'taglist.vim'
-" Plugin 'neocomplcache'
+Plugin 'neocomplcache'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -356,10 +356,10 @@ imap <C-Up> <Esc>yypa
 " virtual mode 复制选中的多行
 vmap <C-Up> "+y<Esc>O<Esc>k"+p
 " normal or insert mode 删除当前行
-nmap <C-d> dd
-imap <C-d> <Esc>ddi
+"" nmap <C-d> dd
+"" imap <C-d> <Esc>ddi
 " virtual mode 删除选中行
-vmap <C-d> d
+""vmap <C-d> d
 " normal mode 使用空格键在光标之前插入空格
 "nmap <Space> i <Esc>l
 " normal mode 使用BackSpace键删除光标之前的字符
@@ -594,7 +594,7 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 """""""""""""""""""""""" nerdtree """"""""""""""""""""""""
 " 打开/关闭目录树
-nmap <leader>t :NERDTreeToggle<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
 imap <C-F2> <Esc>:NERDTreeToggle<CR>i
 "" Tells the NERD tree to make itself colourful and pretty
 let NERDChristmasTree=1
