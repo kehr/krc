@@ -89,6 +89,12 @@ Get the vimrc file
 ```bash
   curl -L https://raw.githubusercontent.com/kehr/krc/master/vimrc > $HOME/.krc 
 ```
+or, if you want set `krc` to be your default vimrc。
+
+```bash
+cp ~/.vimrc ~/.vimrc.bak; curl -L https://raw.githubusercontent.com/kehr/krc/master/vimrc > $HOME/.vimrc
+```
+
 **Step4:**
 
 Set your default `vimrc` file
